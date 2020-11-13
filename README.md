@@ -1,7 +1,14 @@
-// pitagoras-cpp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-// Autor: Cristian Antonio Escalante Hernandez
-// Github: crisanto-dev
-// Problema: Teorema de pitagoras
+# Teorema de pitagoras
+
+## Pseudocódigo
+
+```
+
+```
+
+## Código
+
+```c++
 
 #include <iostream>
 
@@ -14,13 +21,11 @@ extern double hipotenusa(double opuesto, double adyacente);
 
 int main()
 {
-	cout << "Autor: Cristian Antonio Escalante Hernandez\n";
-	cout << "Github: crisanto-dev\n";
-	cout << "Problema: Pitagoras\n";
 	double op, ady, hip, resultado;
 	int opciones;
 	bool bandera = true;
-	cout << "Elija que desea encontrar:\n";
+
+  cout << "Elija que desea encontrar:\n";
 	cout << "1. Opuesto\n";
 	cout << "2. Adyacente\n";
 	cout << "3. Hipotenusa\n";
@@ -169,7 +174,7 @@ double raiz_cuadrada(double numero, double aproximacion, int contador)
 	}
 	double preaproximacion = aproximacion;
 
-	// Por Newton-Raphson x_(n+1) = x_(n) - f(x_(n))/f'(x_(n)) 
+	// Por Newton-Raphson x_(n+1) = x_(n) - f(x_(n))/f'(x_(n))
 	// f(x_(n)) = x^2 - numero = 0
 	aproximacion = aproximacion - ((aproximacion * aproximacion) - numero) / (2 * aproximacion);
 
@@ -182,18 +187,17 @@ double raiz_cuadrada(double numero, double aproximacion, int contador)
 double opuesto(double hipotenusa, double adyacente)
 {
 	double cuadrado = hipotenusa * hipotenusa - adyacente * adyacente;
-
 	return raiz_cuadrada(cuadrado, 1, 0);
 }
 double adyacente(double hipotenusa, double opuesto)
 {
 	double cuadrado = hipotenusa * hipotenusa - opuesto * opuesto;
-
 	return raiz_cuadrada(cuadrado, 1, 0);
 }
 double hipotenusa(double opuesto, double adyacente)
 {
 	double cuadrado = opuesto * opuesto + adyacente * adyacente;
-
 	return raiz_cuadrada(cuadrado, 1, 0);
 }
+
+```
